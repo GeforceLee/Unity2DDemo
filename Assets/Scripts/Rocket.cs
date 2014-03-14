@@ -7,23 +7,20 @@ public class Rocket : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Destroy(gameObject,2);
+		Destroy(gameObject,20);
 	}
 
 	void OnExplode(){
-
-	}
-
-	// Update is called once per frame
-	void Update () {
 		Quaternion randomRotation = Quaternion.Euler(0f,0f,Random.Range(0f,360f));
-
+		
 		Instantiate(explosion,transform.position,randomRotation);
 	}
 
 
-	void OnTriggerEnter2D(Collider2D col){
 
+
+	void OnTriggerEnter2D(Collider2D col){
+		
 		if(col.tag == "Enemy"){
 //			col.gameObject.GetComponent<Enemy>().Hurt();
 
@@ -37,6 +34,7 @@ public class Rocket : MonoBehaviour {
 
 			Destroy(gameObject);
 		}else if(col.gameObject.tag != "Player"){
+			
 			OnExplode();
 			Destroy(gameObject);
 		}

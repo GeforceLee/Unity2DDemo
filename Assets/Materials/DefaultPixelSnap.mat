@@ -6,9 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: HalfAlpha
+  m_Name: DefaultPixelSnap
   m_Shader: {fileID: 10753, guid: 0000000000000000e000000000000000, type: 0}
-  m_ShaderKeywords: []
+  m_ShaderKeywords:
+  - PIXELSNAP_ON
   m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2
@@ -24,9 +25,9 @@ Material:
       data:
         first:
           name: PixelSnap
-        second: 0
+        second: 1
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: .525490224}
+        second: {r: 1, g: 1, b: 1, a: 1}
