@@ -11,8 +11,11 @@ public class PlayerControl : MonoBehaviour {
 	public float maxSpeed = 5f;
 	public AudioClip[] jumpClips;
 	public float jumpForce = 1000f;
+	public AudioClip[] taunts;
+	public float tauntProbablity = 50f;
+	public float tauntDelay = 1f;
 
-
+	private int tauntIndex;
 	private Transform groundCheck;
 	private bool grounded = false;
 	private Animator anim;
@@ -85,6 +88,9 @@ public class PlayerControl : MonoBehaviour {
 		transform.localScale = theScalse;
 	}
 
+	public IEnumerator Taunt(){
+		float tauntChance = Random.Range(0,100f);
 
+	}
 
 }
