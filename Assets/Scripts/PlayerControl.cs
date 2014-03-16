@@ -90,7 +90,25 @@ public class PlayerControl : MonoBehaviour {
 
 	public IEnumerator Taunt(){
 		float tauntChance = Random.Range(0,100f);
+		if (tauntChance > tauntProbablity) {
+			yield return new WaitForSeconds(tauntDelay);
+
+			if(!audio.isPlaying){
+				tauntIndex = TauntRandom();
+
+				audio.clip = taunts[tauntIndex];
+				audio.Play();
+			}
+		}
 
 	}
 
+	int TauntRandom(){
+		int i = Random.Range (0, taunts.Length);
+		if (i == tauntIndex) 
+			return TauntRandom ();
+		else 
+			return i;
+		
+	}
 }
